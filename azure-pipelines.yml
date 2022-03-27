@@ -8,7 +8,7 @@ stages:
     displayName: Build Package
     jobs: 
     - job: BuildPackage
-      pool: LAPTOP-Q338O4FK
+      pool: DESKTOP-MTLRUQV
       steps:    
       - task: UiPathPack@2
         inputs:
@@ -24,7 +24,7 @@ stages:
     displayName: Create Assests
     jobs:
       - job: CreateAssests
-        pool: LAPTOP-Q338O4FK
+        pool: DESKTOP-MTLRUQV
         steps:
         - task: UiPathAssets@2
           inputs:
@@ -40,7 +40,7 @@ stages:
     jobs:
       - deployment: deployDEV
         displayName: Deploy package to DEV Orchestrator
-        pool: LAPTOP-Q338O4FK
+        pool: DESKTOP-MTLRUQV
         environment: DEV
         strategy:
          runOnce:
@@ -59,7 +59,7 @@ stages:
     jobs:
         - job: WorkflowAnalyser
           displayName: AnalyseProject Using Workflow Cli
-          pool: LAPTOP-Q338O4FK
+          pool: DESKTOP-MTLRUQV
           steps:
           - task: PowerShell@2
             inputs:
